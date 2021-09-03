@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.6rem;
+	width: 100%;
+	line-height: 1.3;
+	font-family: "Public Sans", sans-serif;
+	background-color: #292929;
+}
+
+.wrapper {
+	width: $large;
+	max-width: 100%;
+	overflow-x: hidden;
+	margin: 0 auto;
+	@mixin media-up($medium) {
+		width: $medium;
+		max-width: 100vw;
+	}
+}
+
+.container {
+	height: 100%;
+	padding: 0 24px;
+	width: 1114px + 48px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.section {
+	height: 656px;
+	@include media-up($medium) {
+		height: unset;
+		padding-top: 72px;
+		padding-bottom: 72px;
+	}
+}

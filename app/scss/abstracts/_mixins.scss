@@ -1,0 +1,35 @@
+@mixin gradient-color {
+	background: linear-gradient(to right, $green, $light-blue);
+}
+
+@mixin transition-eff {
+	transition: 0.3s ease;
+}
+
+@mixin add-animation($name) {
+	animation: $name 0.5s forwards;
+}
+
+@mixin flex-box($justify: space-between, $align: center, $dir: row) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $dir;
+}
+
+@mixin media-up($breakpoint) {
+	@media screen and (max-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin adjust-font-size($min, $ideal, $max) {
+	font-size: clamp($min, $ideal, $max);
+}
+
+@mixin adjust-text-overflow($line) {
+	display: -webkit-box;
+	-webkit-line-clamp: $line;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}

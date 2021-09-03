@@ -1,0 +1,76 @@
+.why {
+	background-color: $Light-blue-gray;
+	.flex {
+		@include flex-box(center, flex-start, column);
+	}
+
+	&__text {
+		width: 60%;
+		margin-bottom: 80px;
+		@include media-up($medium) {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	&__title {
+		color: $dark-blue;
+
+		@include adjust-font-size(3.6rem, 4.2vw, 4.2rem);
+		margin-bottom: 28px;
+	}
+
+	&__desc {
+		color: $blue-gray;
+		line-height: 1.8;
+		@include adjust-font-size(1.5rem, 1.8vw, 1.8rem);
+	}
+
+	&__list {
+		@include flex-box(flex-start);
+		flex-wrap: wrap;
+		margin-left: -30px;
+		@include media-up($small) {
+			margin-left: 0;
+		}
+	}
+
+	&-item {
+		box-sizing: border-box;
+		@include flex-box(space-between, flex-start, column);
+		width: calc((100% / 4) - 30px);
+		margin-left: 30px;
+
+		@include media-up($medium) {
+			width: calc((100% / 2) - 30px);
+			margin-left: 30px;
+			margin-bottom: 30px;
+		}
+
+		@include media-up($small) {
+			width: 100%;
+			align-items: center;
+			text-align: center;
+			margin-left: 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__icon {
+			width: 74px;
+			margin-bottom: clamp(2.8rem, 3.6vw, 3.6rem);
+		}
+
+		&__title {
+			margin-bottom: clamp(1.8rem, 2.8vw, 2.8rem);
+			color: $dark-blue;
+			font-size: 2.4rem;
+		}
+		&__desc {
+			color: $blue-gray;
+			font-size: 1.5rem;
+			line-height: 1.6;
+		}
+	}
+}

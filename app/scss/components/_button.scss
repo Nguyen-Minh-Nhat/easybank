@@ -1,0 +1,15 @@
+.btn {
+	display: inline-block;
+	padding: 14px 34px;
+	@include gradient-color;
+	border-radius: 30px;
+	color: white;
+	font-size: 14px;
+	font-weight: 700;
+	@include transition-eff;
+
+	&:hover {
+		opacity: 0.8;
+		box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.5);
+	}
+}

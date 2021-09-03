@@ -1,0 +1,107 @@
+.footer {
+	height: 190px;
+	background-color: $dark-blue;
+	padding-top: 48px;
+	padding-bottom: 48px;
+	@include media-up($medium) {
+		height: unset;
+	}
+
+	.flex {
+		justify-content: space-between;
+		@include media-up($medium) {
+			flex-direction: column;
+		}
+	}
+
+	&__left {
+		height: 100%;
+		@include flex-box(flex-start, space-between);
+		@include media-up($medium) {
+			flex-direction: column;
+		}
+	}
+
+	&__logo {
+		@include flex-box(space-between, flex-start, column);
+		@include media-up($medium) {
+			margin-bottom: 32px;
+		}
+	}
+
+	&-social__list {
+		@include flex-box(flex-start, space-between);
+		@include media-up($medium) {
+			margin-top: 32px;
+		}
+	}
+
+	&-social__item {
+		&:not(:last-child) {
+			margin-right: 1.6rem;
+		}
+	}
+
+	&-social__link {
+		display: block;
+		width: 20px;
+		&:hover path {
+			fill: $green;
+		}
+	}
+
+	&-page {
+		@include flex-box(center, center);
+		@include media-up($medium) {
+			flex-direction: column;
+		}
+		&__list {
+			height: 100%;
+			@include flex-box(space-between, flex-start, column);
+			margin-left: clamp(0rem, 9vw, 13rem);
+			@include media-up($medium) {
+				align-items: center;
+				margin-left: 0px;
+			}
+		}
+		&__item,
+		&__list {
+			&:not(:first-child) {
+				@include media-up($medium) {
+					margin-top: 14px;
+				}
+			}
+		}
+		&__link {
+			color: $blue-gray;
+			font-size: 1.4rem;
+			&:hover {
+				@include gradient-color;
+				color: $green;
+				-webkit-text-fill-color: transparent;
+				-webkit-background-clip: text;
+				cursor: pointer;
+				@include media-up($medium) {
+					margin-top: 14px;
+				}
+			}
+		}
+	}
+
+	&__right {
+		height: 100%;
+		@include flex-box(space-between, flex-end, column);
+		@include media-up($medium) {
+			align-items: center;
+			margin-top: 32px;
+		}
+	}
+
+	.copy-right {
+		color: $blue-gray;
+		font-size: 1.4rem;
+		@include media-up($medium) {
+			margin-top: 30px;
+		}
+	}
+}

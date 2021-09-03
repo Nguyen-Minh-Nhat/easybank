@@ -1,0 +1,87 @@
+.articles {
+	background-color: $light-gray;
+	.flex {
+		@include flex-box(center, flex-start, column);
+		@include media-up($medium) {
+			align-items: center;
+		}
+	}
+	&__title {
+		color: $dark-blue;
+
+		@include adjust-font-size(3.6rem, 4.2vw, 4.2rem);
+		margin-bottom: 28px;
+	}
+
+	&__list {
+		@include flex-box(flex-start, stretch);
+		flex-wrap: wrap;
+		margin-left: -30px;
+		@include media-up($small) {
+			margin-left: 0;
+		}
+	}
+
+	&-item {
+		@include flex-box(space-between, stretch, column);
+		width: calc(25% - 30px);
+		margin-left: 30px;
+		background-color: white;
+		border-radius: 5px;
+		overflow: hidden;
+
+		@include media-up($medium) {
+			width: calc((100% / 2) - 30px);
+			margin-left: 30px;
+			margin-bottom: 30px;
+		}
+
+		@include media-up($small) {
+			width: 100%;
+			margin-left: 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__img {
+			height: 200px;
+			flex-shrink: 0;
+		}
+
+		&__text {
+			flex: 1;
+			padding: 28px;
+		}
+		&__artist {
+			display: inline-block;
+			color: $blue-gray;
+			font-size: 1.2rem;
+			margin-bottom: 1.4rem;
+		}
+
+		&__title {
+			color: $dark-blue;
+			font-weight: 400;
+			font-size: 1.7rem;
+			margin-bottom: 1.2rem;
+			@include adjust-text-overflow(3);
+			&:hover {
+				@include gradient-color;
+				color: $green;
+				-webkit-text-fill-color: transparent;
+				-webkit-background-clip: text;
+				cursor: pointer;
+			}
+		}
+
+		&__content {
+			color: $blue-gray;
+			font-size: 1.3rem;
+			display: -webkit-box;
+			-webkit-line-clamp: 4;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+	}
+}

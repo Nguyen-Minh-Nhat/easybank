@@ -1,0 +1,168 @@
+.header {
+	position: fixed;
+	width: inherit;
+	max-width: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+
+	background-color: $white;
+	z-index: 999;
+
+	&-nav {
+		width: 100%;
+		position: relative;
+		height: clamp(
+			$header-height-min * 1rem,
+			$header-height-max * 1vw,
+			$header-height-max * 1rem
+		);
+		@include flex-box();
+
+		&__overlay {
+			display: none;
+
+			@include media-up($medium) {
+				display: block;
+				visibility: hidden;
+				position: absolute;
+
+				top: clamp(6.4rem, 8.2vw, 8.2rem);
+				left: -24px;
+
+				width: 100vw;
+				height: 100vh;
+
+				z-index: -1;
+				background: linear-gradient(to bottom, $dark-blue, transparent);
+				&--show {
+					@include add-animation(fade-in);
+				}
+
+				&--hide {
+					@include add-animation(fade-out);
+				}
+			}
+		}
+
+		&__menu {
+			@include flex-box();
+			@include transition-eff;
+			height: 100%;
+			@include media-up($medium) {
+				visibility: hidden;
+				position: absolute;
+				@include flex-box(space-between, center, column);
+				z-index: 100;
+
+				top: calc(100% + 10px);
+				left: 50%;
+
+				width: 100%;
+				height: 268px;
+				padding: 28px 0;
+
+				background-color: $light-gray;
+				border-radius: 4px;
+
+				transform: translateX(-50%);
+
+				&--show {
+					visibility: visible;
+					@include add-animation(fade-in);
+				}
+				&--hide {
+					visibility: hidden;
+					@include add-animation(fade-out);
+				}
+			}
+
+			&-item {
+				height: 100%;
+				&:not(:first-child) {
+					margin-left: 32px;
+					@include media-up($medium) {
+						margin-left: 0px;
+					}
+				}
+			}
+
+			&-link {
+				height: 100%;
+				position: relative;
+
+				@include flex-box();
+
+				color: $blue-gray;
+
+				&::before {
+					content: "";
+					position: absolute;
+					left: 0;
+					bottom: 0;
+
+					width: 0;
+					height: 3px;
+					@include gradient-color;
+					opacity: 0;
+
+					@include transition-eff;
+				}
+
+				&:hover {
+					color: $dark-blue;
+				}
+				&:hover::before {
+					width: 100%;
+					opacity: 1;
+				}
+			}
+		}
+
+		.btn {
+			@include media-up($medium) {
+				display: none;
+			}
+		}
+
+		&__toggle {
+			@include flex-box(space-between, center, column);
+			margin-top: -5px;
+			display: none;
+
+			cursor: pointer;
+
+			@include media-up($medium) {
+				display: flex;
+			}
+
+			&-line {
+				position: relative;
+				margin-top: 5px;
+				width: 24px;
+				height: 1.5px;
+
+				background-color: black;
+
+				transform-origin: left 70%;
+				@include transition-eff;
+			}
+
+			&--open {
+				span:first-child {
+					transform: rotate(45deg) translateY(-3px);
+				}
+
+				span:nth-child(2) {
+					width: 0;
+
+					visibility: hidden;
+					opacity: 0;
+				}
+
+				span:last-child {
+					transform: rotate(-45deg) translateY(3px);
+				}
+			}
+		}
+	}
+}
