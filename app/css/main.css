@@ -806,8 +806,17 @@ a {
   background-color: white;
   border-radius: 5px;
   overflow: hidden;
-  -webkit-box-shadow: 0 0px 10px 0 rgba(45, 49, 77, 0.308);
-          box-shadow: 0 0px 10px 0 rgba(45, 49, 77, 0.308);
+  -webkit-box-shadow: 0px 0px 10px 0 rgba(45, 49, 77, 0.2);
+          box-shadow: 0px 0px 10px 0 rgba(45, 49, 77, 0.2);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.articles-item:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 0px 2.5px 10px 3px rgba(45, 49, 77, 0.2);
+          box-shadow: 0px 2.5px 10px 3px rgba(45, 49, 77, 0.2);
 }
 
 @media screen and (max-width: 768px) {

@@ -33,3 +33,7 @@
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
+
+@mixin box-shadow-eff($x: 0px, $y: 0px, $blur: 10px, $scale: 0) {
+	box-shadow: $x $y $blur $scale hsla(233, 26%, 24%, 0.2);
+}
