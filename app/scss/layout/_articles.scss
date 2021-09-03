@@ -29,6 +29,7 @@
 		background-color: white;
 		border-radius: 5px;
 		overflow: hidden;
+		box-shadow: 0 0px 10px 0 hsla(233, 26%, 24%, 0.308);
 
 		@include media-up($medium) {
 			width: calc((100% / 2) - 30px);
