@@ -165,7 +165,7 @@ a {
 }
 
 .section {
-  height: 675px;
+  height: 660px;
 }
 
 @media screen and (max-width: 768px) {
@@ -603,6 +603,7 @@ a {
 
 .why {
   background-color: #f3f4f6;
+  height: 675px;
 }
 
 .why .flex {

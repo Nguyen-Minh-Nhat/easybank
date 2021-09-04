@@ -3,7 +3,7 @@
 	.flex {
 		@include flex-box(center, flex-start, column);
 	}
-
+	height: 675px;
 	&__text {
 		width: 60%;
 		margin-bottom: 80px;
