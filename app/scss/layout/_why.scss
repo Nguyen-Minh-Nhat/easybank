@@ -16,8 +16,8 @@
 	&__title {
 		color: $dark-blue;
 
-		@include adjust-font-size(3.6rem, 4.2vw, 4.2rem);
-		margin-bottom: 28px;
+		@include adjust-font-size(3.6rem, 3.6vw, 3.6rem);
+		margin-bottom: 18px;
 	}
 
 	&__desc {
