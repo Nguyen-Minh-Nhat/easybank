@@ -78,6 +78,7 @@
 
 			&-item {
 				height: 100%;
+				font-size: 1.4rem;
 				&:not(:first-child) {
 					margin-left: 32px;
 					@include media-up($medium) {
