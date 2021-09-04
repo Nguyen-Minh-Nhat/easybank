@@ -50,7 +50,7 @@ a {
 }
 
 .section {
-	height: 656px;
+	height: 675px;
 	@include media-up($medium) {
 		height: unset;
 		padding-top: 72px;
